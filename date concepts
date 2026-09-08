@@ -1,0 +1,40 @@
+🔑 Core Date Functions in Spark SQL
+current_date → Returns today’s date (no time).
+
+current_timestamp → Returns current date + time at query start.
+
+date_add → Adds days to a given date.
+
+date_sub → Subtracts days from a given date.
+
+add_months → Adds months to a date.
+
+last_day → Returns the last day of the month for a given date.
+
+next_day → Finds the next specified weekday after a date.
+
+datediff → Difference in days between two dates.
+
+months_between → Number of months between two dates.
+
+🕒 Timestamp & Formatting Functions
+to_date → Converts string/timestamp to DateType.
+
+to_timestamp → Converts string to TimestampType.
+
+date_format → Formats date/timestamp into a string.
+
+unix_timestamp → Converts date/timestamp to Unix epoch seconds.
+
+from_unixtime → Converts epoch seconds back to timestamp.
+
+convert_timezone → Converts timestamps between time zones (Spark 3.4+).
+
+📊 Extracting Date Components
+year, month, dayofmonth → Extract year, month, day.
+
+hour, minute, second → Extract time components.
+
+weekofyear → Returns week number.
+
+quarter → Returns quarter of the year.
