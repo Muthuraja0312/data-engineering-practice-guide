@@ -79,8 +79,15 @@ How would you handle this?
 Job processes 10–100 GB of data. Assume G.2X workers.
 What would you do on the Spark and Glue side to optimize performance and cost?
 For a 10-100 GB Glue job using G.2X workers, I would store data in Parquet, read only required columns, use partition pruning, enable AQE, broadcast small lookup tables, minimize shuffles, and tune partition counts for 128-256 MB partition sizes. On the Glue side, I would enable autoscaling, use job bookmarks for incremental processing, and coalesce output files to avoid small-file issues. These optimizations reduce execution time, memory pressure, S3 I/O, and overall Glue cost
-  ==========================================================================================================
-                                                                                                                                                                                                                                                                                                       
+==========================================================================================================
+8.7. SCD Type 2
+Table:
+merchant_id, merchant_zip, merchant_address
+Merchant address can change.
+How would you implement SCD Type 2 and track historical changes in PySpark?
+ For SCD Type 2, I would maintain columns such as effective_start_date, effective_end_date, and is_current. I would compare the incoming merchant data with the current active dimension records, typically using a hash of business attributes like merchant_zip and merchant_address. If a change is detected, I would expire the existing record by setting is_current='N' and updating the end date, then insert a new record with the updated values, a new start date, an open-ended end date such as 9999-12-31, and is_current='Y'. This preserves complete address history while allowing access to the latest merchant record.
+=========================================================================================================                                                                                                                                    
+                                                                                                                                                                                                                                                                                                            
 
 
 
