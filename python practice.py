@@ -99,3 +99,12 @@ greet("Iqwan")
 
 message has a default value of "Hello".
 ===================================================================
+7. try/except:
+  I use try-except blocks to handle runtime exceptions. I generally catch specific exception types such as ValueError, FileNotFoundError, or ZeroDivisionError instead of using a generic except. I can use else for code that should execute when no exception occurs, and finally for cleanup operations that must execute regardless of whether an exception occurred.
+
+try      → Code that might fail
+except   → Handle the error
+else     → Runs if no error
+finally  → Always runs
+raise    → Manually generate an exception
+======================================================================
