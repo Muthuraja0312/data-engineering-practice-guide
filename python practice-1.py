@@ -108,3 +108,23 @@ else     → Runs if no error
 finally  → Always runs
 raise    → Manually generate an exception
 ======================================================================
+8. to reverse the string using a function
+
+def rev(a):
+  return(a[::-1])
+
+print(rev("iqwan"))
+===================================================
+9.reverse the list and inside rever the string also:
+
+a=["iqwan","deepika","kaushi"]
+
+rev1 =[i[::-1] for i in a]
+def rev(a):
+  return(a[::-1])
+print(rev(rev1))
+=============================================
+10. to reverse the string using for loop:
+a="iqwan is learning"
+for i in a.split():
+  print(i[::-1],end =' ')
