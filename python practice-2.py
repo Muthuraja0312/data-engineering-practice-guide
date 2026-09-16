@@ -52,7 +52,7 @@ txt ="iqwan123"
 print(digit(txt))
    ** output:iqwan
 =============================
-5. To take only alphabets from a string:
+5. To take only numeric value from a string:
 
 def digit(n):
   result =""
