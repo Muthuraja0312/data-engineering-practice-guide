@@ -87,3 +87,15 @@ for i in s:
     if s.count(i) == 1:
         print(i)
         break
+=====================================
+7.
+
+emplstlst = [
+    ["1", ("Arun", "Kumar"), "10000"],
+    ["2", ("Bala", "Mohan"), "12000"]
+]
+
+output = tuple((x[0], *x[1], x[2]) for x in emplstlst)
+
+print(output)
+**output:(('1', 'Arun', 'Kumar', '10000'), ('2', 'Bala', 'Mohan', '12000'))
