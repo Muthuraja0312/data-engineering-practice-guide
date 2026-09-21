@@ -115,3 +115,33 @@ for rec in emplstlst:
 print(result)
 
 **output:['1', 'Arun', 'Kumar', '10000', '2', 'Bala', 'Mohan', '12000']
+============================================
+9. to print non-vowel letters in a word:
+def count_vowels(a):
+    vowels = "aeiouAEIOU"
+    aa = ""
+    for i in a:
+        if i not in vowels:
+            aa += i
+    return aa
+
+# Example usage
+a = "education"
+print("Number of vowels:", count_vowels(a))
+**output:dctn
+================================================
+10.print the occurence of each letter:
+
+def non(s):
+  char={}
+
+  for i in s:
+    char[i]=char.get(i,0)+1
+    
+  return char
+
+# Example usage
+a = "education system column"
+print(non(a))
+
+**output:{'e': 2, 'd': 1, 'u': 2, 'c': 2, 'a': 1, 't': 2, 'i': 1, 'o': 2, 'n': 2, ' ': 2, 's': 2, 'y': 1, 'm': 2, 'l': 1}
