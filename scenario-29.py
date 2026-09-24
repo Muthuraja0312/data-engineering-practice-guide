@@ -72,6 +72,8 @@ VALUES
 (9, 3, 10, 12, 'completed', '2013-10-03'),
 (10, 4, 13, 12, 'cancelled_by_driver', '2013-10-03');
 
-select * from users;
-
 select round((sum(case when status !="completed" then 1 else 0 end)/count(*))* 100,2) as rate, request_at from users a join trips b on a.Users_Id=b.Client_Id where Banned ='No' and request_at between '2013-10-01' and '2013-10-03' group by Request_at order by Request_at;
+============================================================
+Fraction for who login in 2 consecutive days
+
+select round(sum(case when a.event_date = b.first_date +1 then 1 else 0 end)/count(distinct a.player_id),2) as fraction from activity a join (select player_id,min(event_date) as first_date from activity group by player_id) b on a.player_id = b.player_id;
