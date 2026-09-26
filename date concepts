@@ -38,3 +38,8 @@ hour, minute, second → Extract time components.
 weekofyear → Returns week number.
 
 quarter → Returns quarter of the year.
+
+
+===============================================
+1. find the orders which placed in last 1 month
+select *,date_diff(day,orderdate,current_date()) as days from Orders_date where date_diff(day,orderdate,current_date()) <=30;
